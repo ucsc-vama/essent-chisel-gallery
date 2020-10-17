@@ -4,3 +4,6 @@
 [submodule "firrtl-sig"]
 	path = firrtl-sig
 	url = git@github.com:ucsc-vama/firrtl-sig.git
+[submodule "riscv-mini/riscv-mini"]
+	path = riscv-mini/riscv-mini
+	url = https://github.com/ucb-bar/riscv-mini
