@@ -1,18 +1,24 @@
+# Example Integrations With ESSENT
+
+This repo provides examples of how [ESSENT](https://github.com/ucsc-vama/essent) can be used to simulate existing projects. We continue to add more examples and welcome contributions.
+
+
 ## riscv-mini
-This project was based upon [riscv-mini](https://github.com/ucb-bar/riscv-mini).
+[riscv-mini](https://github.com/ucb-bar/riscv-mini) is a 3-stage RISC-V processor implemented in Chisel.
 
-## How to Run
-In the project directory, you can run:
+To integrate with ESSENT, only the main harness (`top.cc`) needed to be modified. To build the emulator:
 
-### `make Tile.h`
-Creates Tile.h, the optimizations can be changed within the makefile. It can be ran at -O1 -O2 or -O3.
+    $ cd riscv-mini
+    $ make emulator
 
-### `make top`
-This creates top binary file. This program should be ran with a hex file as a program argument. Some sample test files can be found riscv-mini/src/test.
+To run a microbenchmark to see it works:
 
-### `make clean`
-Remove Tile.h and top binary
+    $ make test
 
 
+## Rocket Chip
+Since [Rocket Chip](https://github.com/chipsalliance/rocket-chip) is an important Chisel project but requires a code to interface, we release our example integration as a separate repo for it: https://github.com/ucsc-vama/essent-rocket-demo
 
 
+## Integrations in Progress
++ [dinocpu](https://github.com/jlpteaching/dinocpu)
