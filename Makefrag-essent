@@ -1,0 +1,15 @@
+# Assumes this Makefrag included 1 directory up
+essent_dir = $(abspath ../essent)
+firrtl-sig_dir = $(abspath ../firrtl-sig)
+
+ESSENT = $(essent_dir)/utils/bin/essent
+ESSENT_JAR = $(ESSENT).jar
+
+$(essent_dir)/README.md:
+	git submodule update --init $(essent_dir)
+
+$(firrtl-sig_dir)/README.md:
+	git submodule update --init $(firrtl-sig_dir)
+
+$(ESSENT_JAR): $(essent_dir)/README.md $(firrtl-sig_dir)/README.md
+	cd $(essent_dir); sbt 'assembly'
